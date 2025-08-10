@@ -1,0 +1,100 @@
+<div class="rte-wrapper" [ngClass]="'toolbar-' + finalConfig.toolbarPosition">
+  <div class="rte-toolbar" *ngIf="finalConfig.showToolbar">
+    <div class="left-container">
+      <button
+        type="button"
+        (click)="exec('bold')"
+        title="Bold"
+        [class.active]="activeButtons['bold']"
+      >
+        <span class="material-symbols-outlined">format_bold</span>
+      </button>
+      <button
+        type="button"
+        (click)="exec('italic')"
+        title="Italic"
+        [class.active]="activeButtons['italic']"
+      >
+        <span class="material-symbols-outlined">format_italic</span>
+      </button>
+      <button
+        type="button"
+        (click)="exec('underline')"
+        title="Underline"
+        [class.active]="activeButtons['underline']"
+      >
+        <span class="material-symbols-outlined">format_underlined</span>
+      </button>
+
+      <select [(ngModel)]="selectedHeading" (change)="toggleBlock($event)">
+        <option value="p">Normal</option>
+        <option value="h1">Heading 1</option>
+        <option value="h2">Heading 2</option>
+        <option value="h3">Heading 3</option>
+        <option value="h4">Heading 4</option>
+        <option value="h5">Heading 5</option>
+        <option value="h6">Heading 6</option>
+      </select>
+
+      <button
+        type="button"
+        (click)="exec('insertUnorderedList')"
+        title="Bulleted list"
+      >
+        <span class="material-symbols-outlined"> list </span>
+      </button>
+
+      <button
+        type="button"
+        (click)="exec('insertOrderedList')"
+        title="Numbered list"
+      >
+        <span class="material-symbols-outlined"> format_list_numbered </span>
+      </button>
+    </div>
+    <div class="right-container">
+      <button
+        type="button"
+        title="Align Center"
+        [class.active]="activeButtons['justifyCenter']"
+        (click)="setTextAlign('center')"
+      >
+        <span class="material-symbols-outlined"> format_align_center </span>
+      </button>
+
+      <button
+        type="button"
+        title="Align Justify"
+        [class.active]="activeButtons['justifyFull']"
+        (click)="setTextAlign('justify')"
+      >
+        <span class="material-symbols-outlined"> format_align_justify </span>
+      </button>
+
+      <button
+        type="button"
+        title="Align Left"
+        [class.active]="activeButtons['justifyLeft']"
+        (click)="setTextAlign('left')"
+      >
+        <span class="material-symbols-outlined"> format_align_left </span>
+      </button>
+
+      <button
+        type="button"
+        title="Align Right"
+        [class.active]="activeButtons['justifyRight']"
+        (click)="setTextAlign('right')"
+      >
+        <span class="material-symbols-outlined"> format_align_right </span>
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="rte-editor"
+    #editor
+    [attr.placeholder]="finalConfig.placeholder"
+    contenteditable="true"
+  ></div>
+</div>
