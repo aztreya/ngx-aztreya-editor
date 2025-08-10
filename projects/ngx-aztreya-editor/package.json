@@ -1,12 +1,28 @@
 {
   "name": "ngx-aztreya-editor",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+  "version": "1.0.0",
+  "description": "angular rich text editor",
+  "homepage": "https://github.com/aztreya/ngx-aztreya-editor#readme",
+  "bugs": {
+    "url": "https://github.com/aztreya/ngx-aztreya-editor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aztreya/ngx-aztreya-editor.git"
+  },
+  "license": "ISC",
+  "author": "Eldos Das",
+  "type": "typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "ng test"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
   },
   "sideEffects": false
 }

@@ -1,63 +1,52 @@
-# NgxAztreyaEditor
+# ngx-aztreya-editor
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+A lightweight, customizable **Angular Rich Text Editor** component with built-in toolbar, headings, text formatting, and alignment options — ready to drop into your Angular project.
 
-## Code scaffolding
+## ✨ Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- ✅ Bold, Italic, Underline
+- ✅ Headings (H1–H6) and Paragraph
+- ✅ Text alignment (Left, Center, Right, Justify)
+- ✅ Toolbar positioning (`top` or `bottom`)
+- ✅ Placeholder text
+- ✅ Customizable configuration via `EditorConfig`
+- ✅ Emits sanitized HTML content
+- ✅ Works with Angular forms (`ControlValueAccessor`)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
+## 📦 Installation
 
 ```bash
-ng build ngx-aztreya-editor
+npm install ngx-aztreya-editor
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
-### Publishing the Library
+### Example code
 
-Once the project is built, you can publish your library by following these steps:
+#### component
+``` 
+import { Component } from '@angular/core';
+import { NgxAztreyaEditorComponent } from 'ngx-aztreya-editor';
+import { EditorConfig } from 'ngx-aztreya-editor';
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-aztreya-editor
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxAztreyaEditorComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+  editorConfig: EditorConfig = {
+    showToolbar: true,
+    placeholder: 'Write something...',
+    toolbarPosition: 'bottom',
+  };
+}
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+#### html
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<ngx-aztreya-editor [config]="editorConfig"></ngx-aztreya-editor>
+```
