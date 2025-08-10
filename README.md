@@ -1,59 +1,52 @@
-# AztreyaEditorWorkspace
+# ngx-aztreya-editor
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+A lightweight, customizable **Angular Rich Text Editor** component with built-in toolbar, headings, text formatting, and alignment options — ready to drop into your Angular project.
 
-## Development server
+## ✨ Features
 
-To start a local development server, run:
+- ✅ Bold, Italic, Underline
+- ✅ Headings (H1–H6) and Paragraph
+- ✅ Text alignment (Left, Center, Right, Justify)
+- ✅ Toolbar positioning (`top` or `bottom`)
+- ✅ Placeholder text
+- ✅ Customizable configuration via `EditorConfig`
+- ✅ Emits sanitized HTML content
+- ✅ Works with Angular forms (`ControlValueAccessor`)
 
-```bash
-ng serve
+---
+
+## 📦 Installation
+
+``` bash
+npm install ngx-aztreya-editor
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+### Example code
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+#### component
+``` bash
+import { Component } from '@angular/core';
+import { NgxAztreyaEditorComponent } from 'ngx-aztreya-editor';
+import { EditorConfig } from 'ngx-aztreya-editor';
 
-```bash
-ng generate component component-name
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxAztreyaEditorComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+  editorConfig: EditorConfig = {
+    showToolbar: true,
+    placeholder: 'Write something...',
+    toolbarPosition: 'bottom',
+  };
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+#### html
+``` bash
+<ngx-aztreya-editor [config]="editorConfig"></ngx-aztreya-editor>
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
