@@ -240,6 +240,12 @@ export class NgxAztreyaEditorComponent
     const sel = window.getSelection();
     if (!sel || sel.rangeCount === 0) return;
 
+    // Check if selection is inside the editor
+    const anchorNode = sel.anchorNode;
+    if (!anchorNode) return;
+    const isInsideEditor = this.editorRef.nativeElement.contains(anchorNode);
+    if (!isInsideEditor) return; // Ignore events outside the editor
+
     // find a relevant element node from selection
     let node: Node | null = sel.anchorNode;
     if (!node) return;
