@@ -47,6 +47,15 @@ export class AppComponent {
 ```
 
 #### html
+
+Import google fonts in your `index.html` file:
+``` bash
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,100..600,0..1,0..200&display=swap&icon_names=format_align_center,format_align_justify,format_align_left,format_align_right,format_bold,format_italic,format_list_numbered,format_underlined,list"
+    />
+```
+
 ```
 <ngx-aztreya-editor [config]="editorConfig"></ngx-aztreya-editor>
 ```
